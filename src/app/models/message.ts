@@ -1,5 +1,5 @@
 export class Message {
-    id: number;
+    id: string;
     score: number;
     message: string;
     dateCreated: Date;
