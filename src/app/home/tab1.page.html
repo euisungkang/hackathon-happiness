@@ -18,30 +18,15 @@
         </div>
 
     </ion-card>
-
-
-
     <ion-card no-lines>
-        <ion-list>
-            <h2>Message 1</h2>
-            <p>
-                happy <br>
-                very happy
-            </p>
-        </ion-list>
-        <ion-list>
-            <h2>Message 2</h2>
-            <p>
-                happy <br>
-                very happy
-            </p>
-        </ion-list>
-        <ion-list>
-            <h2>Message 3</h2>
-            <p>
-                happy <br>
-                very happy
-            </p>
+        <ion-list *ngFor="let message of messageList">
+            <ion-card>
+                <ion-card-content>
+                    <p>{{message.message}}</p>
+                    <h6>Happiness Score: {{message.score}}</h6>
+                    <h6>Date Created: {{message.dateCreated}}</h6>
+                </ion-card-content>
+            </ion-card>
         </ion-list>
     </ion-card>
 </ion-content>
