@@ -42,5 +42,8 @@ export class Tab1Page {
       message: comment,
       dateCreated: new Date()
     }
-    }
+    this.messageService.createMessage(this.userMessage);
+    this.getMessages();
+  }
+
 }
