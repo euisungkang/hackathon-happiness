@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { MessageService } from '../services/message.service';
 import { Message } from '../models/message';
 
+const Sentiment = require('sentiment');
+const sentiment = new Sentiment();
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -34,13 +37,10 @@ export class Tab1Page {
 
   createMessage(comment) {
     this.userMessage = {
-      id: '1',
-      score: 0,
+      id: "1",
+      score: sentiment.analyze(comment).comparative,
       message: comment,
       dateCreated: new Date()
     }
-    this.messageService.createMessage(this.userMessage);
-  }
-
+    }
 }
-
