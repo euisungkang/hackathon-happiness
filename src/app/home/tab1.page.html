@@ -4,19 +4,11 @@
             <ion-card-title>Enter a happy message</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-            <ion-input [(ngModel)]="userMessage" placeholder="Must be happy!"></ion-input>
-        </ion-card-content>
-
-        <div padding="20px">
-            <form #commentForm="ngForm" (ngSubmit)="createMessage(comment)">
-                <div class="form-group">
-                    <input mdInput type="text" class="form-control" id="comment" required [(ngModel)]="comment"
-                        name="comment" placeholder="Make someone's day">
-                </div>
-                <button [disabled]="!comment" type="submit">Submit</button>
+            <form #messageForm="ngForm" (ngSubmit)="createMessage(userMessage)">
+                <ion-input type="text" class="form-control" required name="userMessage" [(ngModel)]="userMessage" placeholder="Make someone's day!"></ion-input>
+                <button type="submit">Submit</button>
             </form>
-        </div>
-
+        </ion-card-content>
     </ion-card>
     <ion-card no-lines>
         <ion-list *ngFor="let message of messageList">

@@ -35,11 +35,15 @@ export class Tab1Page {
   }
 
   createMessage(comment) {
-        this.userMessage = {
-        id: "1",
-        score: sentiment.analyze(comment).comparative,
-        message: comment,
-        dateCreated: new Date()
-        }
+    this.userMessage = {
+      id: "1",
+      score: sentiment.analyze(comment).comparative,
+      message: comment,
+      dateCreated: new Date()
     }
+    this.messageService.createMessage(this.userMessage);
+    this.getMessages();
+  }
+
 }
+
