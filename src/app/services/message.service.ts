@@ -7,11 +7,14 @@ import { Message } from '../models/message';
 })
 export class MessageService {
 
+
   constructor(private firestore: AngularFirestore) { 
   }
 
   getMessages() {
-    return this.firestore.collection('messages').snapshotChanges();
+    let store = this.firestore.collection('messages').snapshotChanges();
+    console.log(store);
+    return store;
   }
 
   createMessage(message: Message) {
@@ -25,5 +28,4 @@ export class MessageService {
   deleteMessage(message: Message): void {
     this.firestore.doc('messages/' + message.id).delete();
   }
-
 }

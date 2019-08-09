@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { MessageService } from '../services/message.service';
 import { Message } from '../models/message';
-
-const Sentiment = require('sentiment');
+import Sentiment from 'sentiment';
 const sentiment = new Sentiment();
 
 @Component({
@@ -36,6 +35,7 @@ export class Tab1Page {
   }
 
   createMessage(comment) {
+<<<<<<< HEAD
     this.userMessage = {
       id: "1",
       score: 0,
@@ -46,4 +46,13 @@ export class Tab1Page {
     this.getMessages();
   }
 
+=======
+        this.userMessage = {
+        id: "1",
+        score: sentiment.analyze(comment).comparative,
+        message: comment,
+        dateCreated: new Date()
+        }
+    }
+>>>>>>> 1eaf15a822de94bcb12f4d15be0f08436b574b9c
 }
