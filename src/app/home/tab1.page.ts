@@ -13,6 +13,7 @@ export class Tab1Page {
 
   public userMessage: Message;     //This is the happy message
   public messageList: Array<Message>
+  public newDate: Date;
 
   constructor(private messageService: MessageService) {
     this.messageList = [];
@@ -46,6 +47,7 @@ export class Tab1Page {
     this.getMessages();
   }
 
+<<<<<<< Updated upstream
 =======
         this.userMessage = {
         id: "1",
@@ -55,4 +57,11 @@ export class Tab1Page {
         }
     }
 >>>>>>> 1eaf15a822de94bcb12f4d15be0f08436b574b9c
+=======
+  formatDate(unix){
+    this.newDate = new Date(unix);
+    return this.newDate;
+  }
+
+>>>>>>> Stashed changes
 }
