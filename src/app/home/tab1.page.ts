@@ -35,15 +35,20 @@ export class Tab1Page {
   }
 
   createMessage(comment) {
-    this.userMessage = {
-      id: "1",
-      score: sentiment.analyze(comment).comparative,
-      message: comment,
-      dateCreated: new Date()
+    if ((sentiment.analyze(comment).comparative) >= 0) {
+      this.userMessage = {
+        id: "1",
+        score: sentiment.analyze(comment).comparative,
+        message: comment,
+        dateCreated: new Date()
+      }
+      this.messageService.createMessage(this.userMessage);
+      this.getMessages();
+      this.userMessage = new Message;
     }
-    this.messageService.createMessage(this.userMessage);
-    this.getMessages();
+    else {
+      alert("Message was not happy enough :(")
+    }
+
   }
-
 }
-
