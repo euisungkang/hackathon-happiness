@@ -12,6 +12,7 @@ const sentiment = new Sentiment();
 export class Tab1Page {
 
   public userMessage: Message;     //This is the happy message
+  public message: string;
   public messageList: Array<Message>
 
   constructor(private messageService: MessageService) {
@@ -43,7 +44,6 @@ export class Tab1Page {
     }
     this.messageService.createMessage(this.userMessage);
     this.getMessages();
+    this.message = "";
   }
-
 }
-

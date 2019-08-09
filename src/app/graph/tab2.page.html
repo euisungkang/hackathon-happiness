@@ -1,9 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Graph
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content></ion-content>
+<ion-content>
+    <div>
+        <div>
+            <div style="display: block">
+                <canvas baseChart [(data)]="polarAreaChartData"
+                        [(labels)]="polarAreaChartLabels"
+                        [(legend)]="polarAreaLegend"
+                        [(chartType)]="polarAreaChartType">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</ion-content>
