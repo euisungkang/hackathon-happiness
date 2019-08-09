@@ -32,7 +32,13 @@ export class Tab1Page {
     });
   }
 
-  createMessage() {
+  createMessage(comment) {
+    this.userMessage = {
+      id: 1,
+      score: 0,
+      message: comment,
+      dateCreated: new Date()
+    }
     this.messageService.createMessage(this.userMessage);
   }
 

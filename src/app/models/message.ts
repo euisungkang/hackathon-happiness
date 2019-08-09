@@ -1,6 +1,6 @@
 export class Message {
-    id: string;
+    id: number;
     score: number;
     message: string;
-    dateCreated: string;
+    dateCreated: Date;
   }
