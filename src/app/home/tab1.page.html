@@ -6,7 +6,7 @@
         <ion-card-content>
             <form #messageForm="ngForm" (ngSubmit)="createMessage(userMessage)">
                 <ion-input type="text" class="form-control" required name="userMessage" [(ngModel)]="userMessage" placeholder="Make someone's day!"></ion-input>
-                <button type="submit">Submit</button>
+                <ion-button color="secondary" type="submit">Submit</ion-button>
             </form>
         </ion-card-content>
     </ion-card>
