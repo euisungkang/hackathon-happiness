@@ -4,8 +4,15 @@
             <ion-card-title>Enter a happy message</ion-card-title>
         </ion-card-header>
         <ion-card-content>
+<<<<<<< HEAD
             <ion-input type="text" class="form-control" [(ngModel)]="message" placeholder="Make someone's day!"></ion-input>
             <button (click)="createMessage(message)">Submit</button>
+=======
+            <form #messageForm="ngForm" (ngSubmit)="createMessage(userMessage)">
+                <ion-input type="text" class="form-control" required name="userMessage" [(ngModel)]="userMessage" placeholder="Make someone's day!"></ion-input>
+                <ion-button color="secondary" type="submit">Submit</ion-button>
+            </form>
+>>>>>>> 715f140be45f3f3d638eff15aa325cc68565944d
         </ion-card-content>
     </ion-card>
     <ion-card no-lines>
