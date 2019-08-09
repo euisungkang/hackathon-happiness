@@ -35,8 +35,4 @@ export class Tab1Page {
     createMessage() {
       this.messageService.createMessage(this.userMessage);
     }
-  
-  }
-  
-
 }
