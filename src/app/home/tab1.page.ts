@@ -38,7 +38,7 @@ export class Tab1Page {
   createMessage(comment) {
     this.userMessage = {
       id: "1",
-      score: sentiment.analyze(comment).comparative,
+      score: 0,
       message: comment,
       dateCreated: new Date()
     }
